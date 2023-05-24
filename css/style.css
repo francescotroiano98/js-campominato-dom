@@ -70,6 +70,10 @@ button{
     background-color: rgb(29, 75, 192);
     color: white;
 }
+.loser{
+    background-color: red;
+    color: white;
+}
 a{
     color: blueviolet;
 }

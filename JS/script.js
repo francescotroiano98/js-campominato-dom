@@ -5,23 +5,16 @@ const buttonPlay = document.getElementById("play");
 buttonPlay.addEventListener("click", function(){
 
     boxElement.innerHTML = "";
-    console.clear();
+    console.clear(); 
 
+    numbersArray = getRandomUniqueNumber(1, 100, 16);  //Il computer deve generare 16 numeri casuali 
+
+    console.log(numbersArray);
 
     for (let i = 1; i <= 100; i++) {
         createBox(i);
         
     }
-      //Il computer deve generare 16 numeri casuali 
-    const minNum = 1;
-    const maxNum = 100;
-     const elements = 16;
-  
-  
-    const numbersArray = getRandomUniqueNumber(minNum, maxNum, elements);
-  
-     console.log(numbersArray);
-    
 
 });
 
@@ -37,9 +30,35 @@ function createBox(number){
 
     newBoxElement.addEventListener("click", function() { //added evenlistener for change
 
-        newBoxElement.classList.toggle("selected");
+        
+        let bomb = false;
 
-        console.log(number);
+        for (let x = 0; x <= numbersArray.length; x++){
+
+            if (number === numbersArray[x]){
+                
+                bomb = true;
+            }
+            
+        } 
+        
+        if (bomb){
+   
+            console.log(bomb);
+            newBoxElement.classList.add("loser");
+
+            alert("HAI PERSO, CLICCA PLAY PER COMINCIARE UNA NUOVA PARTITA")
+            
+            return false;
+        
+        } else {
+           
+            newBoxElement.classList.add("selected");
+            console.log(number);
+        }    
+
+
+        
 
     });
 
