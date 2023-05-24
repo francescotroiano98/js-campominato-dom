@@ -2,6 +2,7 @@ const boxElement = document.querySelector("section");
 
 const buttonPlay = document.getElementById("play");
 
+
 buttonPlay.addEventListener("click", function(){
 
     boxElement.innerHTML = "";
@@ -18,6 +19,8 @@ buttonPlay.addEventListener("click", function(){
 
 });
 
+let bomb = false;
+let gameOver = false;
 function createBox(number){
 
     let newBoxElement = document.createElement("div");
@@ -28,31 +31,31 @@ function createBox(number){
         
     boxElement.appendChild(newBoxElement);
 
+    
+
     newBoxElement.addEventListener("click", function() { //added evenlistener for change
 
         
-        let bomb = false;
+        
+
+        
 
         for (let x = 0; x <= numbersArray.length; x++){
 
             if (number === numbersArray[x]){
                 
                 bomb = true;
+                gameOver = true; 
             }
             
         } 
-        
-        if (bomb){
-   
+        if (gameOver, bomb){
+            alert("hai perso");
             console.log(bomb);
             newBoxElement.classList.add("loser");
-            this.removeEventListener;
-
-            alert("HAI PERSO, CLICCA PLAY PER COMINCIARE UNA NUOVA PARTITA")
-            
-            return false;
-        
-        } else {
+            return;
+        }
+         else {
            
             newBoxElement.classList.add("selected");
             console.log(number);
