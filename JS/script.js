@@ -46,6 +46,7 @@ function createBox(number){
    
             console.log(bomb);
             newBoxElement.classList.add("loser");
+            this.removeEventListener;
 
             alert("HAI PERSO, CLICCA PLAY PER COMINCIARE UNA NUOVA PARTITA")
             
