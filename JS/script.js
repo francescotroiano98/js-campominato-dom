@@ -3,7 +3,12 @@ const boxElement = document.querySelector("section");
 const buttonPlay = document.getElementById("play");
 
 
+
 buttonPlay.addEventListener("click", function(){
+
+    
+let bomb = false;
+let gameOver = false;
 
     boxElement.innerHTML = "";
     console.clear(); 
@@ -19,8 +24,7 @@ buttonPlay.addEventListener("click", function(){
 
 });
 
-let bomb = false;
-let gameOver = false;
+
 function createBox(number){
 
     let newBoxElement = document.createElement("div");
