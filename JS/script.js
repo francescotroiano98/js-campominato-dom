@@ -7,14 +7,21 @@ buttonPlay.addEventListener("click", function(){
     boxElement.innerHTML = "";
     console.clear();
 
-    getRandomInt(minumNumber, maximumNumber)
-    getRandomUniqueNumber( minNum, maxNum, elements )
 
     for (let i = 1; i <= 100; i++) {
         createBox(i);
         
     }
-
+      //Il computer deve generare 16 numeri casuali 
+    const minNum = 1;
+    const maxNum = 100;
+     const elements = 16;
+  
+  
+    const numbersArray = getRandomUniqueNumber(minNum, maxNum, elements);
+  
+     console.log(numbersArray);
+    
 
 });
 
@@ -86,14 +93,4 @@ function getRandomUniqueNumber( minNum, maxNum, elements ){
   
     return randomNumber;
   }
-  
-  //Il computer deve generare 16 numeri casuali 
-  const minNum = 1;
-  const maxNum = 100;
-  const elements = 16;
-  
-  
-  const numbersArray = getRandomUniqueNumber(minNum, maxNum, elements);
-  
-  console.log(numbersArray);
   
