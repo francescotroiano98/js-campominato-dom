@@ -2,13 +2,13 @@ const boxElement = document.querySelector("section");
 
 const buttonPlay = document.getElementById("play");
 
-
+let conditionWin = 0;
 
 buttonPlay.addEventListener("click", function(){
 
      bomb = false;
      gameOver = false;
-
+    
 
     boxElement.innerHTML = "";
     console.clear(); 
@@ -36,12 +36,13 @@ function createBox(number){
     boxElement.appendChild(newBoxElement);
 
     
+    
 
     newBoxElement.addEventListener("click", function() { //added evenlistener for change
 
         
         
-
+        
         
 
         for (let x = 0; x <= numbersArray.length; x++){
@@ -63,7 +64,13 @@ function createBox(number){
            
             newBoxElement.classList.add("selected");
             console.log(number);
-        }    
+            conditionWin = conditionWin + 1;
+            console.log(conditionWin);
+        } 
+        
+        if (conditionWin === 84){
+            alert("HAI VINTO");
+        }
 
 
         
