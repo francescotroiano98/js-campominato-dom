@@ -6,9 +6,9 @@ const buttonPlay = document.getElementById("play");
 
 buttonPlay.addEventListener("click", function(){
 
-    
-let bomb = false;
-let gameOver = false;
+     bomb = false;
+     gameOver = false;
+
 
     boxElement.innerHTML = "";
     console.clear(); 
