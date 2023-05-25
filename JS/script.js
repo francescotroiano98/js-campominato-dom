@@ -4,6 +4,8 @@ const buttonPlay = document.getElementById("play");
 
 let conditionWin = 0;
 
+
+
 buttonPlay.addEventListener("click", function(){
 
      bomb = false;
@@ -16,6 +18,10 @@ buttonPlay.addEventListener("click", function(){
     numbersArray = getRandomUniqueNumber(1, 100, 16);  //Il computer deve generare 16 numeri casuali 
 
     console.log(numbersArray);
+
+    let win = 100 - numbersArray.length;
+
+    console.log(win)
 
     for (let i = 1; i <= 100; i++) {
         createBox(i);
@@ -68,7 +74,7 @@ function createBox(number){
             console.log(conditionWin);
         } 
         
-        if (conditionWin === 84){
+        if (conditionWin === win){
             alert("HAI VINTO");
         }
 
